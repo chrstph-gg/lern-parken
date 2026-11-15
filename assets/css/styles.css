@@ -1,168 +1,1047 @@
+/* ==========================================================================
+   Lern-Parken – Design-Tokens
+   ========================================================================== */
+:root {
+  --bg: #f5f5f7;
+  --bg-elevated: #ffffff;
+  --bg-alt: #ffffff;
+  --text: #1d1d1f;
+  --text-2: #6e6e73;
+  --hairline: rgba(0, 0, 0, 0.08);
+  --brand: #573fea;
+  --brand-hover: #4a33d6;
+  --brand-tint: rgba(87, 63, 234, 0.1);
+  --nav-bg: rgba(245, 245, 247, 0.72);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.06), 0 30px 60px -12px rgba(30, 20, 80, 0.28);
+
+  --yellow: #ffd854;
+  --pink: #ff7ddc;
+  --mint: #3fe9c0;
+  --no: #e5383b;
+  --almost: #f08a24;
+  --yes: #1fae5b;
+
+  --radius-l: 28px;
+  --radius-m: 20px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --spring: cubic-bezier(0.34, 1.2, 0.64, 1);
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --bg-elevated: #1c1c1e;
+    --bg-alt: #0d0d0f;
+    --text: #f5f5f7;
+    --text-2: #a1a1a6;
+    --hairline: rgba(255, 255, 255, 0.1);
+    --brand: #8a78ff;
+    --brand-hover: #9d8dff;
+    --brand-tint: rgba(138, 120, 255, 0.16);
+    --nav-bg: rgba(22, 22, 23, 0.72);
+    --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.06);
+    --shadow-lift: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* ==========================================================================
+   Basis
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  font-family: Archivo, sans-serif;
-  background-color: #F2F0FF;
+  margin: 0;
+  font: 100%/1.5 -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-.header-img {
-  height: 50px;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.hero-section {
-  width: 100%;
-  /*height: 40vh;*/
+a {
+  color: var(--brand);
+  text-decoration: none;
 }
 
-.hero-container {
-  width: 80%;
-  padding-top: 20vh;
+p {
+  margin: 0;
 }
 
-.hero-img {
-  width: 100%;
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
-.wie-parken-section {
-  background-color: #573FEA;
-  color: white;
+.nowrap {
+  white-space: nowrap;
 }
 
-.mitmachen-section {
-  background-color: #573FEA;
-  color: white;
-  text-align: center;
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 
-.mitmachen-subdiv {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-}
-
-.wp-subdiv {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-}
-
-.parken-image {
-  width: 80%;
-  margin-bottom: 20px;
-}
-
-.parkplatz-image {
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.p-image-subdiv {
-  text-align: center;
-}
-
-.was-parkplatz-section {
-  width: 80%;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.tutorial-section {
-  /*width: 80%;*/
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  background-color: #F8F6F5!important;
-}
-
-.video-container {
-  position: relative;
-  width: 80%;
-  padding-top: 56.25%;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.video-container iframe {
+.skip-link {
   position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--bg-elevated);
+  border-radius: 999px;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ==========================================================================
+   Typografie – Tracking wird mit der Größe enger
+   ========================================================================== */
+.display {
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.title {
+  font-size: clamp(2.125rem, 5vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+  color: var(--text-2);
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--brand);
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Buttons – Feedback beim Drücken, nicht erst beim Loslassen
+   ========================================================================== */
+.btn {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.btn:active {
+  transform: scale(0.96);
+  transition-duration: 80ms;
+}
+
+.btn-small {
+  min-height: 34px;
+  padding: 0 16px;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover);
+}
+
+.btn-secondary {
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.btn-light {
+  background: #fff;
+  color: #573fea;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Navigation – durchscheinendes Material, Inhalt scrollt darunter
+   ========================================================================== */
+.nav {
+  position: sticky;
   top: 0;
+  z-index: 50;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  transition: box-shadow 300ms ease;
+}
+
+.nav.is-scrolled {
+  box-shadow: 0 1px 0 var(--hairline);
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px max(16px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-logo img {
+  height: 34px;
+  width: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-logo img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.nav-links a {
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: opacity 200ms ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner .btn {
+    margin-left: auto;
+  }
+}
+
+/* ==========================================================================
+   Konfetti – Verteilung wie auf der Karte (oben dicht, unten rechts dicht)
+   ========================================================================== */
+.confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-confetti {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.confetti i {
+  position: absolute;
+  display: block;
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 10vw, 120px) 0 clamp(72px, 10vw, 128px);
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.hero-copy .lede {
+  margin-top: 24px;
+  max-width: 34ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+@media (max-width: 880px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-copy .lede {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Die Karte – greifbar, umdrehbar
+   ========================================================================== */
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-stage {
+  width: min(100%, 480px);
+  perspective: 1400px;
+}
+
+.flipcard {
+  all: unset;
+  display: block;
+  width: 100%;
+  aspect-ratio: 85 / 55;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  container-type: inline-size;
+}
+
+.flipcard:active {
+  cursor: grabbing;
+}
+
+.flipcard:focus-visible {
+  outline: none;
+}
+
+.flipcard:focus-visible .flipcard-face {
+  outline: 3px solid var(--brand);
+  outline-offset: 4px;
+}
+
+.flipcard-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateZ(-4deg);
+  will-change: transform;
+}
+
+.flipcard-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.2cqi;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #f4f6fb;
+  color: #111;
+  box-shadow: var(--shadow-lift);
+}
+
+/* leichter Glanz über dem Papier */
+.flipcard-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.55) 48%, rgba(255, 255, 255, 0) 62%);
+  background-size: 250% 100%;
+  background-position: var(--gloss, 60%) 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+.card-headline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -3cqi;
+  font-family: "Didot", "Bodoni 72", "Bodoni MT", "Bodoni Moda", "Playfair Display", "Times New Roman", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.86;
+  color: #0a0a0a;
+}
+
+.ch-line {
+  display: block;
+  white-space: nowrap;
+  transform: scaleX(0.52);
+  letter-spacing: 0.01em;
+}
+
+.ch-big {
+  font-size: 19.5cqi;
+}
+
+.ch-small {
+  font-size: 10.4cqi;
+  margin: 0.6cqi 0 0.2cqi;
+}
+
+.card-sub {
+  position: relative;
+  margin-top: 3cqi;
+  font-size: 3.4cqi;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #111;
+}
+
+.popper {
+  position: absolute;
+  top: 40%;
+  font-size: 9cqi;
+  line-height: 1;
+}
+
+.popper-left {
+  left: 7%;
+}
+
+.popper-right {
+  right: 7%;
+  transform: scaleX(-1);
+}
+
+.flipcard-back {
+  transform: rotateY(180deg);
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 7cqi 8cqi 6cqi;
+  background: radial-gradient(120% 120% at 100% 0%, #6a55ff 0%, #573fea 45%, #3a24c9 100%);
+  color: #fff;
+  text-align: left;
+}
+
+.back-title {
+  font-size: 6.4cqi;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.back-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2cqi;
+  font-size: 3.5cqi;
+  line-height: 1.3;
+  opacity: 0.92;
+}
+
+.back-list span {
+  display: block;
+  padding-left: 4.5cqi;
+  position: relative;
+}
+
+.back-list span::before {
+  content: "";
+  position: absolute;
   left: 0;
+  top: 1.3cqi;
+  width: 2cqi;
+  height: 1.2cqi;
+  background: var(--yellow);
+  border-radius: 1px;
+  transform: rotate(-20deg);
+}
+
+.back-list span:nth-child(2)::before {
+  background: var(--pink);
+  transform: rotate(25deg);
+}
+
+.back-list span:nth-child(3)::before {
+  background: var(--mint);
+  transform: rotate(-50deg);
+}
+
+.back-url {
+  font-size: 3.2cqi;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.card-hint {
+  margin-top: 28px;
+  font-size: 0.875rem;
+  color: var(--text-2);
+  transition: opacity 400ms ease;
+}
+
+.card-hint.is-hidden {
+  opacity: 0;
+}
+
+.hint-arrow {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/* ==========================================================================
+   Sektionen
+   ========================================================================== */
+.section {
+  padding: clamp(80px, 11vw, 140px) 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(40px, 6vw, 64px);
+}
+
+.section-head .lede {
+  margin-top: 16px;
+}
+
+/* Lektion 1 – Methoden */
+.methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.method {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-l);
+  padding: 32px 28px 0;
+  color: #1d1d1f;
+  overflow: hidden;
+  transition: transform 400ms var(--ease-out);
+}
+
+.method-yellow { background: var(--yellow); }
+.method-pink { background: var(--pink); }
+.method-mint { background: var(--mint); }
+
+.method h3 {
+  font-size: 1.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.method p {
+  margin-top: 12px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.method-link {
+  margin-top: 16px;
+  align-self: flex-start;
+  color: #1d1d1f;
+  font-weight: 600;
+}
+
+.method-link:hover {
+  text-decoration: underline;
+}
+
+.method img {
+  width: 62%;
+  margin: 24px auto -18%;
+  mix-blend-mode: multiply;
+  transition: transform 600ms var(--ease-out);
+}
+
+@media (hover: hover) {
+  .method:hover img {
+    transform: translateY(-6%);
+  }
+}
+
+@media (max-width: 880px) {
+  .methods {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* Lektion 2 – Parkplatz-Quiz */
+.quiz {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.spot {
+  background: var(--bg);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.spot img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.spot-body {
+  padding: 24px 28px 30px;
+}
+
+.verdict {
+  display: inline-block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.verdict-no { color: var(--no); }
+.verdict-almost { color: var(--almost); }
+.verdict-yes { color: var(--yes); }
+
+.spot p {
+  color: var(--text-2);
+}
+
+.spot p strong,
+.spot p em {
+  color: var(--text);
+}
+
+.spot-win {
+  cursor: pointer;
+  box-shadow: var(--shadow-card), 0 0 0 2px var(--yes);
+  transition: transform 160ms var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.spot-win:active {
+  transform: scale(0.985);
+}
+
+@media (max-width: 720px) {
+  .quiz {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lektion 3 – Tutorials */
+.segmented {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(100%, 420px);
+  margin: 0 auto;
+  padding: 3px;
+  border-radius: 12px;
+  background: rgba(118, 118, 128, 0.12);
+}
+
+.segmented button {
+  position: relative;
+  z-index: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 8px 6px;
+  border-radius: 9px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 150ms ease;
+}
+
+.segmented button[aria-selected="true"] {
+  font-weight: 600;
+}
+
+.segmented button:active {
+  opacity: 0.6;
+}
+
+.segmented-thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc((100% - 6px) / 3);
+  border-radius: 9px;
+  background: var(--bg-elevated);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04);
+  transform: translateX(calc(var(--i, 0) * 100%));
+  transition: transform 420ms var(--spring);
+}
+
+@media (prefers-color-scheme: dark) {
+  .segmented-thumb {
+    background: #636366;
+  }
+}
+
+.video-caption {
+  text-align: center;
+  margin: 24px 0 20px;
+  color: var(--text-2);
+}
+
+.video {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background: #111;
+  box-shadow: var(--shadow-card);
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.btn-hell {
-  color: #573fea;
-  background-color: white;
-  border-color: white;
-  padding: 10px 20px 10px 20px;
-  font-weight: 700;
+.video-poster {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  background:
+    radial-gradient(100% 100% at 50% 0%, #2a2440 0%, #111 70%);
 }
 
-.btn-mixed {
-  color: #573fea;
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-  padding: 10px 20px 10px 20px;
-  font-weight: 700;
+.video-poster:focus-visible .play {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
 }
 
-.btn-dunkel {
-  color: white;
-  background-color: #573fea;
-  border-color: #573fea;
-  padding: 10px 20px 10px 20px;
-  font-weight: 700;
-  margin-right: 20px;
+.play {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  position: relative;
+  transition: transform 200ms var(--ease-out), background-color 200ms ease;
 }
 
-.parken-karte {
-  margin-bottom: 20px;
+.play::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 27px;
+  border-style: solid;
+  border-width: 15px 0 15px 24px;
+  border-color: transparent transparent transparent #fff;
 }
 
-.karte-1 {
-  background-color: #FFD854;
-  margin-bottom: 20px;
+.video-poster:hover .play {
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.karte-2 {
-  background-color: #FF7DDC;
-  margin-bottom: 20px;
+.video-poster:active .play {
+  transform: scale(0.92);
 }
 
-.karte-3 {
-  background-color: #3FE9C0;
-  margin-bottom: 20px;
+.video-note {
+  font-size: 0.8125rem;
 }
 
-h1 {
-  font-size: 60px;
-  font-weight: 700;
+/* ==========================================================================
+   Mitmachen
+   ========================================================================== */
+.join {
+  position: relative;
+  overflow: hidden;
+  background: #573fea;
+  color: #fff;
+  text-align: center;
+  padding: clamp(96px, 13vw, 160px) 16px;
 }
 
-p {
-  font-family: 'Inter';
+.join-inner {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-a {
-  color: black;
+.join .lede {
+  color: rgba(255, 255, 255, 0.82);
+  margin: 20px auto 36px;
+}
+
+.footer {
+  padding: 40px 16px calc(40px + env(safe-area-inset-bottom));
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-2);
+}
+
+/* ==========================================================================
+   Bestell-Sheet (native <dialog>)
+   ========================================================================== */
+.sheet {
+  width: min(100% - 32px, 480px);
+  max-height: calc(100% - 32px);
+  padding: 36px 28px 28px;
+  border: 0;
+  border-radius: var(--radius-l);
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 250ms ease, transform 450ms var(--ease-out), overlay 450ms allow-discrete, display 450ms allow-discrete;
+}
+
+.sheet[open] {
+  opacity: 1;
+  transform: none;
+}
+
+@starting-style {
+  .sheet[open] {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+}
+
+.sheet::backdrop {
+  background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+  transition: background-color 300ms ease, backdrop-filter 300ms ease, overlay 300ms allow-discrete, display 300ms allow-discrete;
+}
+
+.sheet[open]::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+@starting-style {
+  .sheet[open]::backdrop {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+}
+
+.sheet h2 {
+  font-size: 1.75rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.sheet > p {
+  margin: 10px 0 24px;
+  color: var(--text-2);
+}
+
+.sheet-close-form {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin: 0;
+}
+
+.sheet-close {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(118, 118, 128, 0.14);
+  color: var(--text-2);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.order-form {
+  display: grid;
+  gap: 14px;
+}
+
+.field span {
+  display: block;
+  font-size: 0.8125rem;
   font-weight: 600;
+  color: var(--text-2);
+  margin: 0 0 6px 4px;
 }
 
-h2 {
-  font-size: 48px;
-  font-weight: 600;
+.field input,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background: rgba(118, 118, 128, 0.1);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 14px;
+  resize: vertical;
+  transition: border-color 150ms ease, background-color 150ms ease;
 }
 
-h4 {
-  font-weight: 600;
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  background: var(--bg-elevated);
 }
 
+.order-form .btn {
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   Konfetti-Burst
+   ========================================================================== */
+.burst {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 200;
+}
+
+/* ==========================================================================
+   Barrierefreiheit
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+
+  .btn:active,
+  .spot-win:active {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .nav {
+    background: var(--bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --text-2: var(--text);
+  }
+
+  .nav {
+    background: var(--bg);
+    box-shadow: 0 1px 0 var(--text);
+  }
+}

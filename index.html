@@ -1,202 +1,237 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html lang="de">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Bitte lern Parken! - Lern-Parken.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Du hast echt scheiße geparkt. – Lern-Parken.org</title>
+    <meta name="description" content="Du hast echt scheiße geparkt. Das ist auch der Grund, warum du die Karte erhalten hast, die dich auf diese Seite gebracht hat. Lern-Parken hilft dir.">
+    <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Du hast echt scheiße geparkt. – Lern-Parken.org">
+    <meta property="og:description" content="Erfahre, warum das schlecht ist – und wie es richtig geht.">
+    <meta property="og:image" content="https://lern-parken.org/assets/img/lern-parken-transparent.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Du hast echt scheiße geparkt. – Lern-Parken.org">
     <meta name="twitter:description" content="Du hast echt scheiße geparkt. Das ist auch der Grund, warum du die Karte erhalten hast, die dich auf diese Seite gebracht hat. Lern-Parken hilft dir.">
     <meta name="twitter:image" content="https://lern-parken.org/assets/img/lern-parken-transparent.webp">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Bitte lern Parken! - Lern-Parken.org">
-    <meta name="description" content="Du hast echt scheiße geparkt. Das ist auch der Grund, warum du die Karte erhalten hast, die dich auf diese Seite gebracht hat. Lern-Parken hilft dir.">
-    <meta property="og:image" content="https://lern-parken.org/assets/img/lern-parken-transparent.webp">
     <script type="application/ld+json">
         {
-            "@context": "http://schema.org",
+            "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Lern-Parken",
             "url": "https://lern-parken.org"
         }
     </script>
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp">
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp">
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp">
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp">
-    <link rel="icon" type="image/png" sizes="385x390" href="assets/img/fav.webp">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Archivo.css">
-    <link rel="stylesheet" href="assets/css/Inter.css">
-    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="icon" type="image/webp" href="assets/img/fav.webp">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="font-family: Archivo, sans-serif;">
-    <nav class="navbar navbar-expand-md bg-body py-3">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><img class="header-img" src="assets/img/lern-parken-compact.webp"></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-2">
-                <ul class="navbar-nav ms-auto"></ul><button class="btn btn-primary ms-md-2 btn-dunkel" type="button" data-bs-toggle="modal" data-bs-target="#ordermodal">Mitmachen</button>
-            </div>
+<body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a class="nav-logo" href="#top" aria-label="Lern-Parken – nach oben">
+                <img src="assets/img/lern-parken-compact.webp" alt="Lern-Parken" width="140" height="56">
+            </a>
+            <nav class="nav-links" aria-label="Hauptnavigation">
+                <a href="#lern-parken">Richtig parken</a>
+                <a href="#was-parkplatz">Parkplatz?</a>
+                <a href="#tutorials">Tutorials</a>
+            </nav>
+            <button class="btn btn-small btn-primary" type="button" data-open-order>Mitmachen</button>
         </div>
-    </nav>
-    <section class="hero-section" style="background: url(&quot;assets/img/bg-stripes.webp&quot;) center / cover no-repeat;">
-        <div class="container hero-container">
-            <div class="row">
-                <div class="col-md-6 col-xxl-7">
-                    <h1>Du hast echt scheiße geparkt.</h1>
-                    <p>Das ist auch der Grund, warum du die Karte bekommen hast, die dich auf diese Seite gebracht hat.</p><a class="btn btn-primary btn-dunkel" role="button" href="#lern-parken">Lern Parken</a><a class="btn btn-primary btn-mixed" role="button" href="#was-parkplatz">Was ist ein Parkplatz?</a>
-                </div>
-                <div class="col-md-6 col-xxl-5"><img class="hero-img" src="assets/img/lern-parken-transparent.webp"></div>
-            </div>
-        </div>
-    </section>
-    <section class="wie-parken-section">
-        <div class="wp-subdiv">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h2 id="lern-parken">Wie parkt man richtig?</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card karte-1">
-                            <div class="card-body">
-                                <h4 class="card-title">Vorwärts parken</h4>
-                                <p class="card-text">Vorwärts einparken ist super einfach. Wenn man es richtig macht, sieht es sogar noch richtig gut aus und behindert niemanden.</p><a class="card-link" href="#">Tutorial ansehen</a>
-                                <div class="p-image-subdiv"><img class="parken-image" src="assets/img/vorwaerts.webp"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card karte-2">
-                            <div class="card-body">
-                                <h4 class="card-title">Parallel parken</h4>
-                                <p class="card-text">Auch wenn parallel parken etwas schwieriger ist, ist es wirklich einfach. Wenn man es beherrscht, steht das eigene Auto sogar so, dass es den Verkehrsfluss nicht behindert.</p><a class="card-link" href="#">Tutorial ansehen</a>
-                                <div class="p-image-subdiv"><img class="parken-image" src="assets/img/parallel.webp"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card karte-3">
-                            <div class="card-body">
-                                <h4 class="card-title">Rückwärts parken</h4>
-                                <p class="card-text">Gute Autofahrer parken rückwärts. Wenn man es dann noch beherrscht, dann sieht es umso besser aus und behindert niemanden.</p><a class="card-link" href="#">Tutorial ansehen</a>
-                                <div class="p-image-subdiv"><img class="parken-image" src="assets/img/rueckwaerts.webp"></div>
-                            </div>
-                        </div>
+    </header>
+
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <canvas class="hero-confetti" aria-hidden="true"></canvas>
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span aria-hidden="true">🎉</span> Herzlichen Glückwunsch!</p>
+                    <h1 class="display">Du hast echt <span class="nowrap">scheiße</span> geparkt.</h1>
+                    <p class="lede">Deshalb steckt jetzt diese Karte an deinem Auto. Die gute Nachricht: Parken kann man lernen. Sogar du.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#lern-parken">Lern parken</a>
+                        <a class="btn btn-secondary" href="#was-parkplatz">Was ist ein Parkplatz?</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="was-parkplatz-section">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 id="was-parkplatz">Was ist ein Parkplatz?</h2>
-                    <p>Vieles, was du als Parkplatz identifizierst, ist wahrscheinlich eigentlich kein Parkplatz.<br><br>Deswegen zeigen wir dir hier, was ein Parkplatz ist.</p>
+
+                <div class="hero-card">
+                    <div class="card-stage">
+                        <button class="flipcard" type="button" aria-label="Karte umdrehen" aria-pressed="false">
+                            <span class="flipcard-inner">
+                                <!-- Vorderseite: wie die echte Karte -->
+                                <span class="flipcard-face flipcard-front">
+                                    <span class="confetti" data-confetti="card" aria-hidden="true"></span>
+                                    <span class="popper popper-left" aria-hidden="true">🎉</span>
+                                    <span class="popper popper-right" aria-hidden="true">🎉</span>
+                                    <span class="card-headline">
+                                        <span class="ch-line ch-big">Du hast</span>
+                                        <span class="ch-line ch-small">echt scheisse</span>
+                                        <span class="ch-line ch-big">geparkt</span>
+                                    </span>
+                                    <span class="card-sub">Erfahre auf der Rückseite, warum das schlecht ist.</span>
+                                </span>
+                                <!-- Rückseite -->
+                                <span class="flipcard-face flipcard-back">
+                                    <span class="back-title">Warum das schlecht ist.</span>
+                                    <span class="back-list">
+                                        <span><b>Radwege</b> werden zur Slalomstrecke – mitten in den Verkehr.</span>
+                                        <span><b>Kinderwagen &amp; Rollstühle</b> kommen nicht mehr vorbei.</span>
+                                        <span><b>Rettungsdienste</b> verlieren wertvolle Sekunden.</span>
+                                    </span>
+                                    <span class="back-url">lern-parken.org</span>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <p class="card-hint" aria-hidden="true"><span class="hint-arrow">↔</span> Zum Umdrehen ziehen oder tippen</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card parken-karte">
-                        <div class="card-body"><img class="parkplatz-image" src="assets/img/kein-parkplatz-1.webp">
-                            <h4 class="card-title">Nein.</h4>
-                            <p class="card-text">Das ist kein Parkplatz. Warum? Na weil das Auto den kompletten Radweg blockiert und auf dem Randstein steht.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card parken-karte">
-                        <div class="card-body"><img class="parkplatz-image" src="assets/img/kein-parkplatz-2.webp">
-                            <h4 class="card-title">Nein.</h4>
-                            <p class="card-text">Auch das ist kein Parkplatz. Klar, das Auto steht nicht auf der Staße, aber blockiert den Zebrastreifen. Das ist nicht gut.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card parken-karte">
-                        <div class="card-body"><img class="parkplatz-image" src="assets/img/fast-richtig.webp">
-                            <h4 class="card-title">Fast.</h4>
-                            <p class="card-text">Juhu! Das Auto steht schon mal in einem Bereich, in dem es stehen sollte. Wenn jetzt noch nur ein einziger Parkplatz belegt wird, haben wir es geschafft.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card parken-karte">
-                        <div class="card-body"><img class="parkplatz-image" src="assets/img/guter-parkplatz.webp">
-                            <h4 class="card-title">DING DING DING!</h4>
-                            <p class="card-text">RICHTIG! DAS ist ein Parkplatz. Und was noch viel besser ist? Das Auto steht perfekt innerhalb der Linien, sodass niemand behindert wird.</p>
-                        </div>
-                    </div>
+        </section>
+
+        <!-- WIE PARKT MAN RICHTIG -->
+        <section class="section" id="lern-parken">
+            <div class="section-inner">
+                <header class="section-head">
+                    <p class="eyebrow">Lektion 1</p>
+                    <h2 class="title">Wie parkt man richtig?</h2>
+                    <p class="lede">Drei Techniken. Alle machbar. Versprochen.</p>
+                </header>
+                <div class="methods">
+                    <article class="method method-yellow">
+                        <h3>Vorwärts parken</h3>
+                        <p>Vorwärts einparken ist super einfach. Wenn man es richtig macht, sieht es sogar noch richtig gut aus und behindert niemanden.</p>
+                        <a class="method-link" href="#tutorials" data-tutorial="vorwaerts">Tutorial ansehen <span aria-hidden="true">›</span></a>
+                        <img src="assets/img/vorwaerts.webp" alt="" width="690" height="690" loading="lazy">
+                    </article>
+                    <article class="method method-pink">
+                        <h3>Parallel parken</h3>
+                        <p>Auch wenn parallel parken etwas schwieriger ist – es ist wirklich machbar. Wer es beherrscht, steht so, dass der Verkehr fließen kann.</p>
+                        <a class="method-link" href="#tutorials" data-tutorial="parallel">Tutorial ansehen <span aria-hidden="true">›</span></a>
+                        <img src="assets/img/parallel.webp" alt="" width="690" height="690" loading="lazy">
+                    </article>
+                    <article class="method method-mint">
+                        <h3>Rückwärts parken</h3>
+                        <p>Gute Autofahrer parken rückwärts. Wenn man es dann noch beherrscht, sieht es umso besser aus und behindert niemanden.</p>
+                        <a class="method-link" href="#tutorials" data-tutorial="rueckwaerts">Tutorial ansehen <span aria-hidden="true">›</span></a>
+                        <img src="assets/img/rueckwaerts.webp" alt="" width="690" height="690" loading="lazy">
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="tutorial-section" style="background: url(&quot;assets/img/horizontal-lines.webp&quot;) center / contain no-repeat;">
-        <div class="wp-subdiv">
-            <h2>So parkt man richtig vorwärts.</h2>
-            <p>Dieses Tutorial zeigt dir, wie man richtig vorwärts einparkt.</p>
-            <div class="video-container"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/UXHWheqWnzE" style="padding-right: 0px;"></iframe></div>
-        </div>
-    </section>
-    <section class="tutorial-section" style="background: url(&quot;assets/img/horizontal-lines.webp&quot;) center / contain no-repeat;">
-        <div class="wp-subdiv">
-            <h2>So parkt man richtig parallel.</h2>
-            <p>Dieses Tutorial zeigt dir, wie man richtig parallel einparkt.</p>
-            <div class="video-container"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/OcfHLVL6_sA" style="padding-right: 0px;"></iframe></div>
-        </div>
-    </section>
-    <section class="tutorial-section" style="background: url(&quot;assets/img/horizontal-lines.webp&quot;) center / contain no-repeat;">
-        <div class="wp-subdiv">
-            <h2>So parkt man richtig rückwärts.</h2>
-            <p>Dieses Tutorial zeigt dir, wie man richtig rückwärts einparkt.</p>
-            <div class="video-container"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/9dpHdta182Q" style="padding-right: 0px;"></iframe></div>
-        </div>
-    </section>
-    <section class="mitmachen-section">
-        <div class="mitmachen-subdiv">
-            <h1>Werde ein Teil der Kampagne</h1>
-            <p>Weise Leute auf ihr grottenschlechtes Parken hin. Hol' dir ein paar unserer Karten und hilf Menschen, endlich richtig zu parken.</p><button class="btn btn-primary btn-hell" type="button" data-bs-toggle="modal" data-bs-target="#ordermodal">Karten bestellen</button>
-        </div>
-    </section>
-    <footer class="text-center bg-dark">
-        <div class="container text-white py-4 py-lg-5">
-            <p class="mb-0">Bitte. Lern einfach zu parken.</p>
-        </div>
+        </section>
+
+        <!-- WAS IST EIN PARKPLATZ -->
+        <section class="section section-alt" id="was-parkplatz">
+            <div class="section-inner">
+                <header class="section-head">
+                    <p class="eyebrow">Lektion 2</p>
+                    <h2 class="title">Was ist ein Parkplatz?</h2>
+                    <p class="lede">Vieles, was du als Parkplatz identifizierst, ist wahrscheinlich keiner. Deswegen zeigen wir es dir. Langsam.</p>
+                </header>
+                <div class="quiz">
+                    <article class="spot">
+                        <img src="assets/img/kein-parkplatz-1.webp" alt="Weißes SUV steht auf dem Radweg und dem Bordstein" width="690" height="690" loading="lazy">
+                        <div class="spot-body">
+                            <span class="verdict verdict-no">Nein.</span>
+                            <p>Das ist kein Parkplatz. Warum? Na, weil das Auto den kompletten Radweg blockiert und auf dem Randstein steht.</p>
+                        </div>
+                    </article>
+                    <article class="spot">
+                        <img src="assets/img/kein-parkplatz-2.webp" alt="Auto blockiert einen Zebrastreifen" width="690" height="690" loading="lazy">
+                        <div class="spot-body">
+                            <span class="verdict verdict-no">Nein.</span>
+                            <p>Auch das ist kein Parkplatz. Klar, das Auto steht nicht auf der Straße – aber es blockiert den Zebrastreifen. Das ist nicht gut.</p>
+                        </div>
+                    </article>
+                    <article class="spot">
+                        <img src="assets/img/fast-richtig.webp" alt="Auto steht quer über zwei Parkplätze" width="690" height="690" loading="lazy">
+                        <div class="spot-body">
+                            <span class="verdict verdict-almost">Fast.</span>
+                            <p>Juhu! Das Auto steht schon mal dort, wo es stehen sollte. Wenn jetzt noch nur <em>ein einziger</em> Parkplatz belegt wird, haben wir es geschafft.</p>
+                        </div>
+                    </article>
+                    <article class="spot spot-win" data-celebrate tabindex="0" aria-label="Richtige Antwort – antippen für Konfetti">
+                        <img src="assets/img/guter-parkplatz.webp" alt="Auto steht korrekt innerhalb der Parkplatzlinien" width="690" height="690" loading="lazy">
+                        <div class="spot-body">
+                            <span class="verdict verdict-yes">DING DING DING!</span>
+                            <p>RICHTIG! <strong>Das</strong> ist ein Parkplatz. Und was noch viel besser ist: Das Auto steht perfekt innerhalb der Linien, sodass niemand behindert wird.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- TUTORIALS -->
+        <section class="section" id="tutorials">
+            <div class="section-inner">
+                <header class="section-head">
+                    <p class="eyebrow">Lektion 3</p>
+                    <h2 class="title">Schau es dir an.</h2>
+                    <p class="lede">Drei kurze Videos. Danach gibt es keine Ausreden mehr.</p>
+                </header>
+                <div class="segmented" role="tablist" aria-label="Tutorial auswählen">
+                    <span class="segmented-thumb" aria-hidden="true"></span>
+                    <button role="tab" type="button" aria-selected="true" data-video="UXHWheqWnzE" data-key="vorwaerts">Vorwärts</button>
+                    <button role="tab" type="button" aria-selected="false" data-video="OcfHLVL6_sA" data-key="parallel">Parallel</button>
+                    <button role="tab" type="button" aria-selected="false" data-video="9dpHdta182Q" data-key="rueckwaerts">Rückwärts</button>
+                </div>
+                <p class="video-caption" aria-live="polite">So parkt man richtig vorwärts.</p>
+                <div class="video">
+                    <button class="video-poster" type="button" aria-label="Video laden und abspielen">
+                        <span class="play" aria-hidden="true"></span>
+                        <span class="video-note">Beim Abspielen wird YouTube geladen.</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MITMACHEN -->
+        <section class="join">
+            <div class="confetti" data-confetti="join" aria-hidden="true"></div>
+            <div class="join-inner">
+                <h2 class="title">Werde Teil der Kampagne.</h2>
+                <p class="lede">Weise Leute auf ihr grottenschlechtes Parken hin. Hol dir ein paar unserer Karten und hilf Menschen, endlich richtig zu parken.</p>
+                <button class="btn btn-light" type="button" data-open-order>Karten bestellen</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Bitte. Lern einfach zu parken.</p>
     </footer>
-    <div class="modal fade" role="dialog" tabindex="-1" id="ordermodal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Du willst mitmachen?</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Das freut uns natürlich. Schick uns einfach eine Nachricht über dieses Kontaktformular und wir melden uns bei dir.</p>
-                    <div class="card mb-5">
-                        <div class="card-body p-sm-5">
-                            <h2 class="text-center mb-4">Karten bestellen</h2>
-                            <form data-bss-recipient="b1453a450fc9d479883eb011213b0d2b" data-bss-loading-message="Sende..." data-bss-success-title="Super!" data-bss-success-message="Deine Nachricht wurde versendet!">
-                                <div class="mb-3"><input class="form-control" type="text" id="name-2" name="name" placeholder="Name"></div>
-                                <div class="mb-3"><input class="form-control" type="email" id="email-2" name="email" placeholder="E-Mail"></div>
-                                <div class="mb-3"><textarea class="form-control" id="message-2" name="message" rows="6" placeholder="Nachricht"></textarea></div>
-                                <div><button class="btn btn-primary w-100 d-block" type="submit">Absenden</button></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <dialog class="sheet" id="order" aria-labelledby="order-title">
+        <form method="dialog" class="sheet-close-form">
+            <button class="sheet-close" aria-label="Schließen">✕</button>
+        </form>
+        <h2 id="order-title">Karten bestellen</h2>
+        <p>Das freut uns natürlich. Schick uns einfach eine Nachricht und wir melden uns bei dir.</p>
+        <form class="order-form" data-bss-recipient="b1453a450fc9d479883eb011213b0d2b" data-bss-loading-message="Sende..." data-bss-success-title="Super!" data-bss-success-message="Deine Nachricht wurde versendet!">
+            <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label class="field">
+                <span>E-Mail</span>
+                <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label class="field">
+                <span>Nachricht</span>
+                <textarea name="message" rows="5" placeholder="Wie viele Karten brauchst du – und wohin sollen sie?" required></textarea>
+            </label>
+            <button class="btn btn-primary btn-block" type="submit">Absenden</button>
+        </form>
+    </dialog>
+
+    <canvas class="burst" aria-hidden="true"></canvas>
+
     <script src="assets/js/smart-forms.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
